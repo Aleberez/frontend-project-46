@@ -8,18 +8,19 @@ const gendiff = (filepath1, filepath2) => {
   const keys = _.sortBy([...new Set([...Object.keys(data1), ...Object.keys(data2)])]);
   const result = keys.map((key) => {
     if (!data2.hasOwnProperty(key)) {
-      return `- ${key}: ${data1[key]}`;
+      return `  - ${key}: ${data1[key]}`;
     }
     if (!data1.hasOwnProperty(key)) {
-      return `+ ${key}: ${data2[key]}`;
+      return `  + ${key}: ${data2[key]}`;
     }
     if (data1[key] !== data2[key]) {
-      return `- ${key}: ${data1[key]}\n+ ${key}: ${data2[key]}`;
+      return `  - ${key}: ${data1[key]}\n  + ${key}: ${data2[key]}`;
     }
-    return `  ${key}: ${data1[key]}`;
+    return `    ${key}: ${data1[key]}`;
   }).join('\n');
 
-  return result;
+  return '{\n' + result + '\n}';
+
 };
 
 export default gendiff;
