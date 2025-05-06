@@ -6,4 +6,3 @@ export default (filepath) => {
   const data = readFileSync(absolutePath, 'utf-8');
   return JSON.parse(data);
 };
-
