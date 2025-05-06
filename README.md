@@ -1,6 +1,7 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/Aleberez/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Aleberez/frontend-project-46/actions)
 
+[![Node CI](https://github.com/Aleberez/frontend-project-46/actions/workflows/node-check.yml/badge.svg)](https://github.com/Aleberez/frontend-project-46/actions/workflows/node-check.yml)
 
 ## Using
 
