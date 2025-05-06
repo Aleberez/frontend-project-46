@@ -32,8 +32,8 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
-            -Dsonar.projectKey=ваш_проект_ключ
-            -Dsonar.organization=ваш_ник_sonarcloud
+            -Dsonar.projectKey=Aleberez_frontend-project-46
+            -Dsonar.organization=aleberez
             -Dsonar.sources=src
             -Dsonar.tests=__tests__
             -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
