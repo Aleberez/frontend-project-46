@@ -15,6 +15,10 @@
 gendiff file1.json file2.json
 ```
 
-## Flat comparison example
+## Flat comparison example json
 
 <a href="https://asciinema.org/a/XrLrwLsos0BZmjMaHLeGj7le5" target="_blank"><img src="https://asciinema.org/a/XrLrwLsos0BZmjMaHLeGj7le5.svg" /></a>
+
+## Flat comparison example yaml/yml, yaml + json
+
+<a href="https://asciinema.org/a/X2IguhsESwzfgi9f0hDgPVpbt" target="_blank"><img src="https://asciinema.org/a/X2IguhsESwzfgi9f0hDgPVpbt.svg" /></a>
