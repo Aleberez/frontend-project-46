@@ -10,7 +10,6 @@ const getExtension = (filename) => path.extname(filename).slice(1);
 const gendiff = (filepath1, filepath2) => {
   const file1Content = readFileSync(resolvePath(filepath1), 'utf-8');
   const file2Content = readFileSync(resolvePath(filepath2), 'utf-8');
-  
   const data1 = parse(file1Content, getExtension(filepath1));
   const data2 = parse(file2Content, getExtension(filepath2));
 
