@@ -31,10 +31,12 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
+          coverageCommand: make test-coverage
+          debug: true
           args: >
             -Dsonar.organization=aleberez
             -Dsonar.projectKey=Aleberez_frontend-project-46
-            -Dsonar.sources=src  # Укажите путь к исходникам
+            -Dsonar.sources=src
             -Dsonar.tests=__tests__
             -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
             -Dsonar.host.url=https://sonarcloud.io
