@@ -1,8 +1,13 @@
-import { readFileSync } from 'node:fs';
-import path from 'node:path';
+import yaml from 'js-yaml';
 
-export default (filepath) => {
-  const absolutePath = path.resolve(filepath);
-  const data = readFileSync(absolutePath, 'utf-8');
-  return JSON.parse(data);
+export default (data, format) => {
+  switch (format) {
+    case 'json':
+      return JSON.parse(data);
+    case 'yaml':
+    case 'yml':
+      return yaml.load(data);
+    default:
+      throw new Error(`Unknown format: ${format}`);
+  }
 };
