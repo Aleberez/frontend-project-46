@@ -2,7 +2,6 @@ import gendiff from '../src/index.js';
 import result from '../__fixtures__/result.js';
 import resultFlat from '../__fixtures__/resultPlain.js';
 import resultJSON from '../__fixtures__/resultJSON.js';
-import parse from '../src/parsers.js';
 
 test('check json stylish', () => {
   expect(gendiff('__fixtures__/file1.json', '__fixtures__/file2.json')).toEqual(result);
