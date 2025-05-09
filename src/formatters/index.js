@@ -6,11 +6,11 @@ export default function formatter(tree, format) {
   switch (format) {
     case 'stylish':
       return stylish(tree);
-    case 'flat':
+    case 'plain':
       return makeFlat(tree);
     case 'json':
       return stringify(tree);
     default:
-      throw new Error('Uncorrect format! Please use "stylish", "flat" or "json"');
+      throw new Error('Uncorrect format! Please use "stylish", "plain" or "json"');
   }
 }
