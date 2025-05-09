@@ -9,3 +9,5 @@ rules:
   no-console: 0
   import/extensions: 0
   no-undef: 0
+  semi: ['error', 'never']
+  arrow-parens: ['off']
