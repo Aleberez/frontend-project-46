@@ -1,6 +1,8 @@
 import gendiff from '../src/index.js';
 import result from '../__fixtures__/result.js';
 import resultFlat from '../__fixtures__/resultPlain.js';
+import resultJSON from '../__fixtures__/resultJSON.js';
+import parse from '../src/parsers.js';
 
 test('check json stylish', () => {
   expect(gendiff('__fixtures__/file1.json', '__fixtures__/file2.json', 'stylish')).toEqual(result);
@@ -24,4 +26,31 @@ test('check yaml flat', () => {
 
 test('check yml flat', () => {
   expect(gendiff('__fixtures__/file1.yml', '__fixtures__/file2.yml', 'flat')).toEqual(resultFlat);
+});
+
+test('check json JSON', () => {
+  expect(gendiff('__fixtures__/file1.json', '__fixtures__/file2.json', 'json')).toEqual(resultJSON);
+});
+
+test('check yaml JSON', () => {
+  expect(gendiff('__fixtures__/file1.yaml', '__fixtures__/file2.yaml', 'json')).toEqual(resultJSON);
+});
+
+test('check yml JSON', () => {
+  expect(gendiff('__fixtures__/file1.yml', '__fixtures__/file2.yml', 'json')).toEqual(resultJSON);
+});
+
+test('should throw error for unknown format', () => {
+  const unknownFormat = 'default check';
+  expect(() => gendiff('__fixtures__/file1.yml', '__fixtures__/file2.yml', unknownFormat))
+    .toThrow(`Unknown format: ${unknownFormat}`);
+});
+
+test('parser should throw for unknown format', () => {
+  const format = 'txt';
+  expect(() => parse('file.txt', format)).toThrow(`Unknown format: ${format}`);
+});
+
+test('should throw for error', () => {
+  expect(() => gendiff('file1.txt', 'file2.txt')).toThrow();
 });
