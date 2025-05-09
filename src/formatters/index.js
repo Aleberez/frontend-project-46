@@ -11,6 +11,6 @@ export default function formatter(tree, format) {
     case 'json':
       return stringify(tree);
     default:
-      throw new Error(`Unknown format`);
+      throw new Error('Uncorrect format! Please use "stylish", "flat" or "json"');
   }
 }
