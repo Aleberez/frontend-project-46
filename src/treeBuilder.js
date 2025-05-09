@@ -4,7 +4,7 @@ const buildAST = (data1, data2) => {
   const data1Keys = Object.keys(data1)
   const data2Keys = Object.keys(data2)
   const allKeys = [...new Set([...data1Keys, ...data2Keys])]
-  const sortedKeys = [...allKeys].sort()
+  const sortedKeys = [...allKeys].sort((a,b) => a - b)
 
   const children = sortedKeys.map((key) => {
     const hasKeyInData1 = data1Keys.includes(key)
