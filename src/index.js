@@ -14,7 +14,7 @@ const gendiff = (filepath1, filepath2, format = 'stylish') => {
   const data1 = parse(file1Content, getExtension(filepath1));
   const data2 = parse(file2Content, getExtension(filepath2));
 
-  return formatter(getTree(data1, data2), format = 'stylish');
+  return formatter(getTree(data1, data2), format);
 };
 
 export default gendiff;

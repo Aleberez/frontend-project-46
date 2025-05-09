@@ -1,8 +1,8 @@
 import _ from 'lodash';
 
-const indent = 4;
+const indentSize = 4;
 
-const makeIndent = (depth, extra = 0) => ' '.repeat(indent * depth - extra);
+const makeIndent = (depth, extra = 0) => ' '.repeat(indentSize * depth - extra);
 
 const stringify = (value, depth) => {
   if (!_.isObject(value) || value === null) {
